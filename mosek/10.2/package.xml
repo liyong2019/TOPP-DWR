@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+  <name>mosek64</name>
+  <version>0.0.0</version>
+  <description>mosek 10.2 libary</description>
+  <maintainer email="liyong2018@zju.edu.cn">liyong2018</maintainer>
+  <license>TODO: License declaration</license>
+
+  <build_depend>rclcpp</build_depend>
+  <exec_depend>rclcpp</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

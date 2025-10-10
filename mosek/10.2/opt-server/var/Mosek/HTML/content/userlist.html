@@ -1,0 +1,85 @@
+<header>
+  <h1>Users</h1>
+</header>
+
+<section id="content" class="wrapper">
+  <section class="user-op-div">
+    <div>
+      <div style="display : inline-block">
+        <h2>Add user</h2>
+        <table>
+          <tr><td>Login:</td>          <td><input id="new-user-login" type="text"></td></tr>
+          <tr><td>Name:</td>           <td><input id="new-user-name"  type="text"></td></tr>
+          <tr><td>Email:</td>          <td><input id="new-user-email" type="text"></td></tr>
+          <tr><td>Password:</td>       <td><input id="new-user-pwd1"  type="password"></td></tr>
+          <tr><td>Repeat Password:</td><td><input id="new-user-pwd2"  type="password"></td></tr>
+          <tr><td>Permissions:</td>    <td><input id="new-user-perm-login"         type="checkbox"><label for="new-user-perm-login"         >Login        </label></td></tr>
+          <tr><td>            </td>    <td><input id="new-user-perm-submit"        type="checkbox"><label for="new-user-perm-submit"        >Submit       </label></td></tr>
+          <tr><td>            </td>    <td><input id="new-user-perm-use-api"       type="checkbox"><label for="new-user-perm-use-api"       >Use API      </label></td></tr>
+          <tr><td>            </td>    <td><input id="new-user-perm-use-tokens"    type="checkbox"><label for="new-user-perm-use-tokens"    >Use tokens   </label></td></tr>
+          <tr><td>            </td>    <td><input id="new-user-perm-create-tokens" type="checkbox"><label for="new-user-perm-create-tokens" >Create tokens</label></td></tr>
+          <tr><td>            </td>    <td><input id="new-user-perm-admin"         type="checkbox"><label for="new-user-perm-admin"         >Administrator</label></td></tr>
+        </table>
+        <input id="btn-create-user" type="button" value="Create">
+        <span id="error-msg" style="color : red; font-weight : bold;"></span>
+      </div>
+      <div style="display : inline-block; float:right;">
+        <h2>Update user</h2>
+        <table>
+          <tr><td>Login:</td>          <td><input id="old-user-login" type="text" readonly disabled></td></tr>
+          <tr><td>Name:</td>           <td><input id="old-user-name"  type="text"></td></tr>
+          <tr><td>Email:</td>          <td><input id="old-user-email" type="text"></td></tr>
+          <tr><td>Password:</td>       <td><input id="old-user-pwd"   type="password"></td></tr>
+          <tr><td>Permissions:</td>    <td><input id="old-user-perm-login"         type="checkbox"><label for="old-user-perm-login"         >Login        </label></td></tr>
+          <tr><td>            </td>    <td><input id="old-user-perm-submit"        type="checkbox"><label for="old-user-perm-submit"        >Submit       </label></td></tr>
+          <tr><td>            </td>    <td><input id="old-user-perm-use-api"       type="checkbox"><label for="old-user-perm-use-api"       >Use API      </label></td></tr>
+          <tr><td>            </td>    <td><input id="old-user-perm-use-tokens"    type="checkbox"><label for="old-user-perm-use-tokens"    >Use tokens   </label></td></tr>
+          <tr><td>            </td>    <td><input id="old-user-perm-create-tokens" type="checkbox"><label for="old-user-perm-create-tokens" >Create tokens</label></td></tr>
+          <tr><td>            </td>    <td><input id="old-user-perm-admin"         type="checkbox"><label for="old-user-perm-admin"         >Administrator</label></td></tr>
+          <tr><td>            </td>    <td><input id="old-user-perm-enable"        type="checkbox"><label for="old-user-perm-enable"        >Enable user</label></td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="table-wrapper">
+      <table id="users-table" class="display" data-searchable="false">
+        <thead>
+          <tr>
+            <th data-name="Login">User ID</th>
+            <th data-name="Name"> Name</th>
+            <th data-name="Email"> Email</th>
+            <th data-name="Permissions" class="data-permissions">Permissions</th>
+            <th class="data-perm-login"        ><div>Login<div></th>
+            <th class="data-perm-submit"       ><div>Submit</div></th>
+            <th class="data-perm-use-token"    ><div>Use/Acc</div></th>
+            <th class="data-perm-create-token" ><div>Crt/Acc</div></th>
+            <th class="data-perm-use-api"      ><div>API</div></th>
+            <th class="data-perm-admin"        ><div>Admin</div></th>
+            <!-- <th data-item="ops"               class="minimal-column"></th> -->
+          </tr>
+        </thead>
+        <tfoot>
+          <th>User ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Permissions</th>
+          <th><div>Login<div></th>    Login</th>
+          <th><div>Submit</div></th>
+          <th><div>Use/Acc</div></th>
+          <th><div>Crt/Acc</div></th>
+          <th><div>API</div></th>
+          <th><div>Admin</div></th>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+</section>
+<script>
+  window.initialized_local = new Promise(async (resolve,reject) => {
+    let user  = await  window.initialized;
+    let users = await import('/static/script/users.mjs');
+    await users.initialize();
+    resolve();
+  });
+</script>

@@ -1,0 +1,43 @@
+<header>
+  <h1>All Jobs</h1>
+</header>
+<section id="content" class="wrapper">
+  <section>
+    <h2>Jobs</h2>
+
+    <div class="table-wrapper">
+      <table id="jobs-table" class="display" data-order='[[4,"asc"]]' class="global">
+        <thead>
+          <tr>
+            <th data-name="ID"          data-orderable="false">Job ID</th>
+            <th data-name="Description" data-orderable="false">Description</th>
+            <th data-name="Login"       data-orderable="true">Owner</th>
+            <th data-name="State"       data-orderable="true"class="data-state">Status</th>
+            <th data-name="SubmitTime"  data-orderable="true">Submitted</th>
+            <th data-name="Duration"    data-orderable="true" class="data-duration">Duration</th>
+            <th data-name="Filesize"    data-orderable="true" class="data-filesize">Size</th>
+            </th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Job ID</th>
+            <th>Description</th>
+            <th>Owner</th>
+            <th>Status</th>
+            <th>Submitted</th>
+            <th>Duration</th>
+            <th>Size</th>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+</section>
+
+<script>
+  window.initialized.then((user) => {
+    import('/static/script/jobs.mjs').then((jobs) => { jobs.initialize(); } );
+  });
+</script>

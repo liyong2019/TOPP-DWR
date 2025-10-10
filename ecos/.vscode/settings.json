@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "amd.h": "c",
+        "ecos_bb.h": "c",
+        "glblopts.h": "c"
+    }
+}

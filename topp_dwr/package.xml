@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+    <name>topp_dwr</name>
+    <version>1.0.0</version>
+    <description>Open-source code for IROS2025 contributed paper: TOPP-DWR</description>
+    <maintainer email="liyong2018@zju.edu.cn">liyong2018</maintainer>
+    <license>TODO: License declaration</license>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+    <build_depend>rclcpp</build_depend>
+    <build_depend>visualization_msgs</build_depend>
+    <build_depend>mosek64</build_depend>
+    <build_depend>ecos</build_depend>
+
+    <exec_depend>rclcpp</exec_depend>
+    <exec_depend>visualization_msgs</exec_depend>
+    <exec_depend>mosek64</exec_depend>
+    <exec_depend>ecos</exec_depend>
+    <export>
+      <build_type>ament_cmake</build_type>
+     </export>
+</package>

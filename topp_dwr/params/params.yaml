@@ -1,0 +1,30 @@
+# TOPP-DWR Algorithm Parameter Configuration File
+# Description: common_params for trajectories c1/c2/c3; c4_params for RViz click input
+
+# -------------------------- Common Parameter Group (Shared by c1/c2/c3 Trajectories)--------------------------
+common_params:
+  # Velocity/Acceleration Constraints
+  v_max: 0.6        # # Maximum linear velocity
+  a_max_l: 1.0      # Maximum longitudinal acceleration
+  a_max_n: 0.6      # Maximum lateral acceleration 
+  # Robot Hardware Parameters
+  vr_max: 0.75      # Maximum right wheel velocity
+  vl_max: 0.75      # Maximum left wheel velocity
+  d: 0.35           # Wheelbase
+  w_max: 2.0        # Maximum angular velocity 
+  start_vel: 0.0
+  end_vel: 0.0
+
+# -------------------------- RViz Exclusive Parameter Group (Used Only by c4 Trajectory)--------------------------
+rviz_click_params:
+  # Velocity/Acceleration Constraints
+  v_max: 0.6        # # Maximum linear velocity
+  a_max_l: 1.0      # Maximum longitudinal acceleration
+  a_max_n: 0.1      # Maximum lateral acceleration 
+  # Robot Hardware Parameters
+  vr_max: 0.75      # Maximum right wheel velocity
+  vl_max: 0.75      # Maximum left wheel velocity
+  d: 0.35           # Wheelbase
+  w_max: 2.0        # Maximum angular velocity 
+  start_vel: 0.0
+  end_vel: 0.0
